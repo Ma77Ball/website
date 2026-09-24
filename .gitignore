@@ -7,3 +7,10 @@ next-env.d.ts
 *.pem
 .env*.local
 npm-debug.log*
+
+# TypeScript incremental build cache
+*.tsbuildinfo
+
+# Internal working notes (not part of the site)
+/docs
+/TODO.md
