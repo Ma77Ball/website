@@ -1231,12 +1231,53 @@ a.card:hover .card-title .arrow {
 }
 
 .cstat-dots {
-  width: 38px;
+  position: relative;
+  width: 52px;
   height: 20px;
   margin-top: 8px;
   background-image: radial-gradient(var(--purple) 1.1px, transparent 1.3px);
   background-size: 6px 6px;
-  opacity: 0.55;
+  opacity: 0.28;
+}
+
+/* A brighter copy of the dots that sweeps left to right, like a loading bar. */
+.cstat-dots::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--purple) 1.2px, transparent 1.4px);
+  background-size: 6px 6px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 42%, #000 58%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 42%, #000 58%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 320% 100%;
+  mask-size: 320% 100%;
+  animation: dotsweep 2.6s ease-in-out infinite;
+}
+
+.cstat:nth-child(2) .cstat-dots::after { animation-delay: 0.35s; }
+.cstat:nth-child(3) .cstat-dots::after { animation-delay: 0.7s; }
+.cstat:nth-child(4) .cstat-dots::after { animation-delay: 1.05s; }
+
+@keyframes dotsweep {
+  0% {
+    -webkit-mask-position: -40% 0;
+    mask-position: -40% 0;
+  }
+  100% {
+    -webkit-mask-position: 140% 0;
+    mask-position: 140% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cstat-dots {
+    opacity: 0.55;
+  }
+  .cstat-dots::after {
+    animation: none;
+  }
 }
 
 .cstat-label {
