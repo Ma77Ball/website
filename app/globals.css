@@ -1,5 +1,5 @@
 :root {
-  --purple: #f2a51c;
+  --purple: #c8710a;
   --teal: #e2453a;
   --yellow: #f4c020;
   --grad-blue: rgba(120, 205, 232, 0.7);
@@ -7,14 +7,33 @@
   --grad-yellow: rgba(251, 140, 60, 0.85);
   --grad-pink: #ef3b3b;
   --orange: #ff9c0d;
+  --bg: #ffffff;
+  --text: #1b2027;
+  --muted: #566171;
+  --border: rgba(15, 22, 32, 0.14);
+  --card-bg: #ffffff;
+  --heading: #0f1620;
+  --on-band-sub: rgba(15, 22, 32, 0.78);
+  --tag-band-bg: rgba(15, 22, 32, 0.08);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --maxw: 1120px;
+}
+
+/* ---------- Night mode ---------- */
+html[data-theme="dark"] {
+  --purple: #f2a51c;
   --bg: #08272f;
   --text: #dfe6ef;
   --muted: #9aa6b6;
   --border: rgba(255, 255, 255, 0.13);
   --card-bg: #0f3a44;
   --heading: #f4f8fd;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  --maxw: 1120px;
+  --on-band-sub: rgba(255, 255, 255, 0.9);
+  --tag-band-bg: rgba(255, 255, 255, 0.16);
+}
+
+html {
+  transition: background-color 0.4s ease;
 }
 
 * {
@@ -67,9 +86,12 @@ em {
   left: 0;
   right: 0;
   bottom: -1px;
-  height: 102px;
-  background: url("/wave-bottom.svg") no-repeat;
-  background-size: 100% 100%;
+  height: 86px;
+  background-color: var(--bg);
+  -webkit-mask: url("/wave-bottom.svg") no-repeat;
+  mask: url("/wave-bottom.svg") no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 .site-header-inner {
@@ -108,7 +130,7 @@ em {
 
 .nav a {
   position: relative;
-  color: #fff;
+  color: var(--heading);
   font-size: 1.9rem;
   line-height: 2.1rem;
   padding: 4px 6px;
@@ -137,6 +159,33 @@ em {
 
 .nav-resume {
   font-weight: 600;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-left: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--heading);
+  cursor: pointer;
+  font: inherit;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--purple);
+  border-color: var(--purple);
+  transform: rotate(18deg);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* ---------- Page container ---------- */
@@ -302,7 +351,7 @@ em {
 }
 
 .section-title.on-band {
-  color: #fff;
+  color: var(--heading);
 }
 
 /* Places list */
@@ -337,9 +386,12 @@ em {
   top: -1px;
   left: 0;
   right: 0;
-  height: 102px;
-  background: url("/wave-top.svg") no-repeat;
-  background-size: 100% 100%;
+  height: 86px;
+  background-color: var(--bg);
+  -webkit-mask: url("/wave-top.svg") no-repeat;
+  mask: url("/wave-top.svg") no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 .band::after {
@@ -348,18 +400,23 @@ em {
   bottom: -1px;
   left: 0;
   right: 0;
-  height: 102px;
-  background: url("/wave-bottom.svg") no-repeat;
-  background-size: 100% 100%;
+  height: 86px;
+  background-color: var(--bg);
+  -webkit-mask: url("/wave-bottom.svg") no-repeat;
+  mask: url("/wave-bottom.svg") no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 /* Alternate bands use a second wave variant (humps in different spots) */
 .band-alt::before {
-  background-image: url("/wave-top-2.svg");
+  -webkit-mask-image: url("/wave-top-2.svg");
+  mask-image: url("/wave-top-2.svg");
 }
 
 .band-alt::after {
-  background-image: url("/wave-bottom-2.svg");
+  -webkit-mask-image: url("/wave-bottom-2.svg");
+  mask-image: url("/wave-bottom-2.svg");
 }
 
 .band-inner {
@@ -375,7 +432,7 @@ em {
 }
 
 .on-band-text {
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--on-band-sub);
   font-size: 1.12rem;
   max-width: 60ch;
   margin-bottom: 24px;
@@ -465,10 +522,10 @@ a.card:hover .card-title .arrow {
 }
 
 .see-all a {
-  color: #fff;
+  color: var(--heading);
   font-weight: 600;
   font-size: 1.05rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 2px solid var(--purple);
 }
 
 /* Editorial entries (education) */
@@ -540,11 +597,11 @@ a.card:hover .card-title .arrow {
 
 /* Tool logos when placed on a gradient wave band */
 .band .tool-group-title {
-  color: #fff;
+  color: var(--heading);
 }
 
 .band .logo-tile span {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--muted);
 }
 
 .band .logo-tile img {
@@ -592,18 +649,18 @@ a.card:hover .card-title .arrow {
 /* ---------- Education (interactive) ---------- */
 .edu {
   display: grid;
-  gap: 14px;
+  gap: 18px;
   margin-top: 8px;
 }
 
 .edu-item {
   display: grid;
-  grid-template-columns: 56px 1fr auto;
-  gap: 18px;
+  grid-template-columns: 74px 1fr auto;
+  gap: 24px;
   align-items: start;
   width: 100%;
   text-align: left;
-  padding: 20px 22px;
+  padding: 30px 32px;
   background: var(--card-bg);
   border: 2px solid var(--border);
   border-left: 6px solid var(--edu-accent, var(--purple));
@@ -620,8 +677,8 @@ a.card:hover .card-title .arrow {
 }
 
 .edu-logo {
-  width: 56px;
-  height: 56px;
+  width: 74px;
+  height: 74px;
   border-radius: 50%;
 }
 
@@ -634,7 +691,7 @@ a.card:hover .card-title .arrow {
 }
 
 .edu-school {
-  font-size: 1.15rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--text);
 }
@@ -648,7 +705,8 @@ a.card:hover .card-title .arrow {
 .edu-degree {
   color: var(--edu-accent, var(--purple));
   font-weight: 600;
-  margin-top: 2px;
+  font-size: 1.08rem;
+  margin-top: 4px;
 }
 
 .edu-detail-wrap {
@@ -664,6 +722,7 @@ a.card:hover .card-title .arrow {
 .edu-detail {
   overflow: hidden;
   color: var(--muted);
+  font-size: 1.05rem;
 }
 
 .edu-item.open .edu-detail {
@@ -1231,8 +1290,8 @@ a.card:hover .card-title .arrow {
 }
 
 .tag-band {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.18);
+  color: var(--heading);
+  background: var(--tag-band-bg);
 }
 
 

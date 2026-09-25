@@ -38,7 +38,7 @@ export const EDUCATION: School[] = [
     logo: "school-berkeley",
     degree: "M.Sc. in Data Science",
     detail: "GPA 3.96 · Focus on machine learning and large-scale data.",
-    accent: "#003262",
+    accent: "#d4a017",
   },
   {
     period: "2019 - 2022",

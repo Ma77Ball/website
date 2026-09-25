@@ -22,7 +22,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={serif.variable}>
-      <body>{children}</body>
+      <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();",
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

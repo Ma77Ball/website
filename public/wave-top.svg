@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180" preserveAspectRatio="none"><path fill="#08272f" d="M0 85 C180 165 440 165 620 85 C880 5 1180 5 1440 85 L1440 0 L0 0 Z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 180" preserveAspectRatio="none">
+<path fill="#ffffff" fill-opacity="0.2" d="M0 128 C240 210 480 210 720 128 C960 46 1200 46 1440 128 L1440 0 L0 0 Z"/>
+<path fill="#ffffff" fill-opacity="0.42" d="M0 104 C240 186 480 186 720 104 C960 22 1200 22 1440 104 L1440 0 L0 0 Z"/>
+<path fill="#ffffff" d="M0 80 C240 162 480 162 720 80 C960 -2 1200 -2 1440 80 L1440 0 L0 0 Z"/>
+</svg>
