@@ -1356,3 +1356,166 @@ a.card:hover .card-title .arrow {
     transition: none !important;
   }
 }
+
+/* ---- Thoughts empty state ---- */
+.thoughts-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  padding: 72px 24px 88px;
+  border: 1px dashed var(--border);
+  border-radius: 18px;
+  background: var(--card-bg);
+}
+
+.thoughts-empty-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: var(--purple);
+  background: var(--tag-band-bg);
+}
+
+.thoughts-empty-text {
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  max-width: 42ch;
+}
+
+/* ---- Thoughts post (markdown) page ---- */
+.post {
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: 52px 0 40px;
+}
+
+.post-back {
+  display: inline-block;
+  color: var(--purple);
+  font-weight: 600;
+  margin-bottom: 26px;
+}
+
+.post-back:hover {
+  color: var(--teal);
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.post-tag {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--purple);
+  background: var(--tag-band-bg);
+}
+
+.post-date {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.post-title {
+  font-size: 2.6rem;
+  line-height: 1.08;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 8px;
+}
+
+/* Body: inherits .prose for base color/links, adds block element styling. */
+.post-body {
+  max-width: none;
+  margin-top: 1.8rem;
+  color: var(--text);
+  font-size: 1.16rem;
+  line-height: 1.85;
+}
+
+.post-body > * + * {
+  margin-top: 1.15rem;
+}
+
+.post-body h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--heading);
+  margin-top: 2.4rem;
+  line-height: 1.2;
+}
+
+.post-body h3 {
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: var(--heading);
+  margin-top: 1.9rem;
+}
+
+.post-body ul,
+.post-body ol {
+  padding-left: 1.4rem;
+}
+
+.post-body li + li {
+  margin-top: 0.4rem;
+}
+
+.post-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 0.15em 0.4em;
+  border-radius: 5px;
+  background: var(--tag-band-bg);
+}
+
+.post-body pre {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.post-body pre code {
+  background: none;
+  padding: 0;
+  font-size: inherit;
+}
+
+.post-body blockquote {
+  border-left: 3px solid var(--purple);
+  padding-left: 18px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.post-body a {
+  color: var(--purple);
+  border-bottom: 2px solid var(--teal);
+}
+
+.post-body a:hover {
+  color: var(--teal);
+}
+
+.post-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
