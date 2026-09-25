@@ -165,8 +165,8 @@ export default async function CodePage() {
           </h2>
           <p className="prose">
             Contributing to open source is easily my favorite part of the work.
-            Shipping improvements that other people build on, and learning from
-            the maintainers who review them, never gets old.
+            I enjoy Shipping improvements that other people build, use, and 
+	    learning from the maintainers who review them.
           </p>
           <div className="featured-grid">
             {repos.map((r) => (
