@@ -84,20 +84,50 @@ export const TOOLS = [
   },
 ];
 
-export type Thought = { slug: string; date: string; title: string; excerpt: string };
+export type Thought = { slug: string; date: string; tag: string; title: string; excerpt: string };
 
 export const THOUGHTS: Thought[] = [
   {
     slug: "why-benchmarks-matter",
     date: "Coming soon",
+    tag: "Benchmarking",
     title: "Why AI & data benchmarks are harder than they look",
     excerpt: "Notes on building a system-agnostic benchmark suite - and why most comparisons quietly measure the wrong thing.",
   },
   {
     slug: "on-device-llms",
     date: "Coming soon",
+    tag: "LLMs",
     title: "Running LLMs on your own hardware, cheaply",
     excerpt: "What actually works for local fine-tuning and distillation when you can't (or won't) send data to the cloud.",
+  },
+  {
+    slug: "162-pull-requests",
+    date: "Coming soon",
+    tag: "Open Source",
+    title: "What 162 pull requests taught me about open source",
+    excerpt: "Lessons from contributing to Apache projects - reviews, etiquette, and the parts nobody writes down.",
+  },
+  {
+    slug: "columnar-execution",
+    date: "Coming soon",
+    tag: "Systems",
+    title: "A columnar, vectorized execution engine, explained",
+    excerpt: "How Apache Arrow and vectorized operators make data workflows faster, without the hand-waving.",
+  },
+  {
+    slug: "rl-text-to-sql",
+    date: "Coming soon",
+    tag: "RL",
+    title: "Reinforcement learning for text-to-SQL: what worked",
+    excerpt: "Reward shaping, Q-learning, and the surprising places a little RL helps query generation.",
+  },
+  {
+    slug: "vector-vs-keyword",
+    date: "Coming soon",
+    tag: "Retrieval",
+    title: "Vector search vs. keyword search in production",
+    excerpt: "When embeddings win, when they don't, and why the answer is usually 'both'.",
   },
 ];
 

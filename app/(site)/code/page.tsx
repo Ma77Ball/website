@@ -207,7 +207,7 @@ export default async function CodePage() {
             <p className="prose">
               {live
                 ? "My open-source contributions over the past year, pulled live from GitHub."
-                : "A snapshot of my open-source work."}
+                : "A snapshot of my open-source work over the past year."}
             </p>
           </div>
           <div className="contrib-grid">
@@ -224,10 +224,8 @@ export default async function CodePage() {
           <p className="prose contrib-note">
             Beyond the numbers, most of that work lives on a handful of projects
             I genuinely care about - reviewing pull requests, mentoring
-            first-time contributors, and keeping the build and tooling healthy so
-            the next person has an easier time. If you maintain something I use,
-            there is a good chance I have opened an issue or a PR on it.
-          </p>
+            first-time contributors, and keeping the build and tooling healthy 
+	    so the next person has an easier time.           </p>
         </section>
       </Reveal>
 
